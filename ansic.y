@@ -1,3 +1,13 @@
+//nuevo agregado
+%{
+#include <stdio.h>
+#include <stdlib.h>
+void yyerror(const char *s);
+extern int yylex();
+extern FILE* yyin;
+%}
+
+
 %union {
     struct {
 		int ival;
@@ -20,25 +30,29 @@
 
 %token CASE DEFAULT IF ELSE SWITCH WHILE DO FOR GOTO CONTINUE BREAK RETURN
 
+//nuevo agregado
+%nonassoc NOELSE
+%nonassoc ELSE
+
 %start translation_unit
 %%
 
 primary_expression
-	: IDENTIFIER
-	| CONSTANT
-	| STRING_LITERAL
-	| '(' expression ')'
+	: IDENTIFIER			{printf("primary_expression: IDENTIFIER\n");}
+	| CONSTANT				{printf("primary_expression: CONSTANT\n");}
+	| STRING_LITERAL		{printf("primary_expression: STRING_LITERAL\n");}
+	| '(' expression ')'	{printf("primary_expression: '(' expression ')'\n");}
 	;
 
 postfix_expression
-	: primary_expression
-	| postfix_expression '[' expression ']'
-	| postfix_expression '(' ')'
-	| postfix_expression '(' argument_expression_list ')'
-	| postfix_expression '.' IDENTIFIER
-	| postfix_expression PTR_OP IDENTIFIER
-	| postfix_expression INC_OP
-	| postfix_expression DEC_OP
+	: primary_expression										{printf("postfix_expression: primary_expression\n");}
+	| postfix_expression '[' expression ']'						{printf("postfix_expression: postfix_expression '[' expression ']'	\n");}
+	| postfix_expression '(' ')'								{printf("postfix_expression: postfix_expression '(' ')'\n");}
+	| postfix_expression '(' argument_expression_list ')'		{printf("postfix_expression: postfix_expression '(' argument_expression_list ')'\n");}
+	| postfix_expression '.' IDENTIFIER							{printf("postfix_expression: postfix_expression '.' IDENTIFIER\n");}
+	| postfix_expression PTR_OP IDENTIFIER						{printf("postfix_expression: postfix_expression PTR_OP IDENTIFIER\n");}
+	| postfix_expression INC_OP									{printf("postfix_expression: postfix_expression INC_OP	\n");}
+	| postfix_expression DEC_OP									{printf("postfix_expression: postfix_expression DEC_OP\n");}
 	;
 
 argument_expression_list
@@ -161,8 +175,8 @@ constant_expression
 	;
 
 declaration
-	: declaration_specifiers ';'
-	| declaration_specifiers init_declarator_list ';'
+	: declaration_specifiers ';'						{printf("declaration: declaration_specifiers ';'\n");}
+	| declaration_specifiers init_declarator_list ';'	{printf("declaration: declaration_specifiers init_declarator_list ';'\n");}
 	;
 
 declaration_specifiers
@@ -272,13 +286,13 @@ declarator
 	;
 
 direct_declarator
-	: IDENTIFIER
-	| '(' declarator ')'
-	| direct_declarator '[' constant_expression ']'
-	| direct_declarator '[' ']'
-	| direct_declarator '(' parameter_type_list ')'
-	| direct_declarator '(' identifier_list ')'
-	| direct_declarator '(' ')'
+	: IDENTIFIER										{printf("direct_declarator: IDENTIFIER\n");}
+	| '(' declarator ')'								{printf("direct_declarator: '(' declarator ')'\n");}
+	| direct_declarator '[' constant_expression ']'		{printf("direct_declarator: direct_declarator '[' constant_expression ']'\n");}
+	| direct_declarator '[' ']'							{printf("direct_declarator: direct_declarator '[' ']'\n");}
+	| direct_declarator '(' parameter_type_list ')'		{printf("direct_declarator: direct_declarator '(' parameter_type_list ')'\n");}
+	| direct_declarator '(' identifier_list ')'			{printf("direct_declarator: direct_declarator '(' identifier_list ')'\n");}
+	| direct_declarator '(' ')'							{printf("direct_declarator: direct_declarator '(' ')'\n");}
 	;
 
 pointer
@@ -386,42 +400,43 @@ expression_statement
 	| expression ';'
 	;
 
+//nuevo agregado 
 selection_statement
-	: IF '(' expression ')' statement
-	| IF '(' expression ')' statement ELSE statement
-	| SWITCH '(' expression ')' statement
+	: IF '(' expression ')' statement %prec NOELSE		{printf("selection_statement: IF '(' expression ')' statement\n");}
+	| IF '(' expression ')' statement ELSE statement	{printf("selection_statement: IF '(' expression ')' statement ELSE statement\n");}
+	| SWITCH '(' expression ')' statement				{printf("selection_statement: SWITCH '(' expression ')' statement\n");}
 	;
 
 iteration_statement
-	: WHILE '(' expression ')' statement
-	| DO statement WHILE '(' expression ')' ';'
-	| FOR '(' expression_statement expression_statement ')' statement
-	| FOR '(' expression_statement expression_statement expression ')' statement
+	: WHILE '(' expression ')' statement											{printf("iteration_statement: WHILE '(' expression ')' statement\n");}
+	| DO statement WHILE '(' expression ')' ';'										{printf("iteration_statement: DO statement WHILE '(' expression ')' ';'\n");}
+	| FOR '(' expression_statement expression_statement ')' statement				{printf("iteration_statement: FOR '(' expression_statement expression_statement ')' statement\n");}
+	| FOR '(' expression_statement expression_statement expression ')' statement	{printf("iteration_statement: FOR '(' expression_statement expression_statement expression ')' statement\n");}
 	;
 
 jump_statement
-	: GOTO IDENTIFIER ';'
-	| CONTINUE ';'
-	| BREAK ';'
-	| RETURN ';'
-	| RETURN expression ';'
+	: GOTO IDENTIFIER ';'		{printf("jump_statement: GOTO IDENTIFIER ';'\n");}
+	| CONTINUE ';'				{printf("jump_statement: CONTINUE ';'\n");}
+	| BREAK ';'					{printf("jump_statement: BREAK ';'\n");}
+	| RETURN ';'				{printf("jump_statement: RETURN ';'\n");}
+	| RETURN expression ';'		{printf("jump_statement: RETURN expression ';'\n");}
 	;
 
 translation_unit
-	: external_declaration
-	| translation_unit external_declaration
+	: external_declaration						{printf("translation_unit: external_declaration\n");}
+	| translation_unit external_declaration		{printf("translation_unit: translation_unit external_declaration\n");}
 	;
 
 external_declaration
-	: function_definition
-	| declaration
+	: function_definition      {printf("external_declaration: function_definition\n");}
+	| declaration			   {printf("external_declaration: declaration\n");}
 	;
 
 function_definition
-	: declaration_specifiers declarator declaration_list compound_statement
-	| declaration_specifiers declarator compound_statement
-	| declarator declaration_list compound_statement
-	| declarator compound_statement
+	: declaration_specifiers declarator declaration_list compound_statement     {printf("function_definition: declaration_specifiers declarator declaration_list compound_statement\n");}
+	| declaration_specifiers declarator compound_statement						{printf("function_definition: declaration_specifiers declarator compound_statement\n");}
+	| declarator declaration_list compound_statement							{printf("function_definition: declarator declaration_list compound_statement\n");}
+	| declarator compound_statement												{printf("function_definition: declarator compound_statement\n");}
 	;
 
 %%
@@ -431,7 +446,7 @@ extern char yytext[];
 extern int column;
 extern int lineno;
 
-void yyerror(char *s)
+void yyerror(const char *s)
 {
 	fflush(stdout);
 	printf("\n%*s\n%*s\n", lineno, "^", column, s);
@@ -440,7 +455,7 @@ void yyerror(char *s)
 int main (int argc, char *argv[]){
 	int c;
 	if(argc<2){
-        printf("Analizador sintactico de ANSI C 1985\n"):
+        printf("Analizador sintactico de ANSI C 1985\n");
 		printf("Uso %s archivo\n", argv[0]);
 		exit(0);
 	}

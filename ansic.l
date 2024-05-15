@@ -277,6 +277,7 @@ L?\"				{ 	count();
 
 <INSTR>\"          	{	count();
 						BEGIN(INITIAL);
+						buffer[bufsize] = '\0';
 						yylval.sval = strdup(buffer); //crea un dupicado de la cadena y la asigna
 						free(buffer);
 						return(STRING_LITERAL);
@@ -482,20 +483,6 @@ void print_token(int c)
 
 
 
-int main (int argc, char *argv[]){
-	int c;
-	if(argc<2){
-		printf("Uso %s archivo\n", argv[0]);
-		exit(0);
-	}
-	yyin = fopen(argv[1], "rt");
-	while((c = yylex()) != 0){
-		/*printf("[%d]", c);*/
-		print_token(c);
-	}
-	printf("\n");
 
-	return 0;
-}
 
 
