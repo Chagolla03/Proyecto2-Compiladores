@@ -1850,182 +1850,1202 @@ yyreduce:
 #line 1851 "ansic.tab.c"
     break;
 
+  case 14: /* argument_expression_list: assignment_expression  */
+#line 59 "ansic.y"
+                                                                                                {printf("argument_expression_list: assignment_expression\n");}
+#line 1857 "ansic.tab.c"
+    break;
+
+  case 15: /* argument_expression_list: argument_expression_list ',' assignment_expression  */
+#line 60 "ansic.y"
+                                                                {printf("argument_expression_list: argument_expression_list ',' assignment_expression\n");}
+#line 1863 "ansic.tab.c"
+    break;
+
+  case 16: /* unary_expression: postfix_expression  */
+#line 64 "ansic.y"
+                                                        {printf("unary_expression: postfix_expression\n");}
+#line 1869 "ansic.tab.c"
+    break;
+
+  case 17: /* unary_expression: INC_OP unary_expression  */
+#line 65 "ansic.y"
+                                                        {printf("unary_expression: INC_OP unary_expression\n");}
+#line 1875 "ansic.tab.c"
+    break;
+
+  case 18: /* unary_expression: DEC_OP unary_expression  */
+#line 66 "ansic.y"
+                                                        {printf("unary_expression: DEC_OP unary_expression\n");}
+#line 1881 "ansic.tab.c"
+    break;
+
+  case 19: /* unary_expression: unary_operator cast_expression  */
+#line 67 "ansic.y"
+                                                {printf("unary_expression: unary_operator cast_expression\n");}
+#line 1887 "ansic.tab.c"
+    break;
+
+  case 20: /* unary_expression: SIZEOF unary_expression  */
+#line 68 "ansic.y"
+                                                        {printf("unary_expression: SIZEOF unary_expression\n");}
+#line 1893 "ansic.tab.c"
+    break;
+
+  case 21: /* unary_expression: SIZEOF '(' type_name ')'  */
+#line 69 "ansic.y"
+                                                        {printf("unary_expression: SIZEOF '(' type_name ')'\n");}
+#line 1899 "ansic.tab.c"
+    break;
+
+  case 22: /* unary_operator: '&'  */
+#line 73 "ansic.y"
+                                {printf("unary_operator: '&'\n");}
+#line 1905 "ansic.tab.c"
+    break;
+
+  case 23: /* unary_operator: '*'  */
+#line 74 "ansic.y"
+                                {printf("unary_operator: '*'\n");}
+#line 1911 "ansic.tab.c"
+    break;
+
+  case 24: /* unary_operator: '+'  */
+#line 75 "ansic.y"
+                                {printf("unary_operator: '+'\n");}
+#line 1917 "ansic.tab.c"
+    break;
+
+  case 25: /* unary_operator: '-'  */
+#line 76 "ansic.y"
+                                {printf("unary_operator: '-'\n");}
+#line 1923 "ansic.tab.c"
+    break;
+
+  case 26: /* unary_operator: '~'  */
+#line 77 "ansic.y"
+                                {printf("unary_operator: '~'\n");}
+#line 1929 "ansic.tab.c"
+    break;
+
+  case 27: /* unary_operator: '!'  */
+#line 78 "ansic.y"
+                                {printf("unary_operator: '!'\n");}
+#line 1935 "ansic.tab.c"
+    break;
+
+  case 28: /* cast_expression: unary_expression  */
+#line 82 "ansic.y"
+                                                                        {printf("cast_expression: unary_expression\n");}
+#line 1941 "ansic.tab.c"
+    break;
+
+  case 29: /* cast_expression: '(' type_name ')' cast_expression  */
+#line 83 "ansic.y"
+                                                        {printf("cast_expression: '(' type_name ')' cast_expression\n");}
+#line 1947 "ansic.tab.c"
+    break;
+
+  case 30: /* multiplicative_expression: cast_expression  */
+#line 87 "ansic.y"
+                                                                                                {printf("multiplicative_expression: cast_expression\n");}
+#line 1953 "ansic.tab.c"
+    break;
+
+  case 31: /* multiplicative_expression: multiplicative_expression '*' cast_expression  */
+#line 88 "ansic.y"
+                                                                {printf("multiplicative_expression: multiplicative_expression '*' cast_expression\n");}
+#line 1959 "ansic.tab.c"
+    break;
+
+  case 32: /* multiplicative_expression: multiplicative_expression '/' cast_expression  */
+#line 89 "ansic.y"
+                                                                {printf("multiplicative_expression: multiplicative_expression '/' cast_expression\n");}
+#line 1965 "ansic.tab.c"
+    break;
+
+  case 33: /* multiplicative_expression: multiplicative_expression '%' cast_expression  */
+#line 90 "ansic.y"
+                                                                {printf("multiplicative_expression: multiplicative_expression '%' cast_expression\n");}
+#line 1971 "ansic.tab.c"
+    break;
+
+  case 34: /* additive_expression: multiplicative_expression  */
+#line 94 "ansic.y"
+                                                                                                {printf("additive_expression: multiplicative_expression\n");}
+#line 1977 "ansic.tab.c"
+    break;
+
+  case 35: /* additive_expression: additive_expression '+' multiplicative_expression  */
+#line 95 "ansic.y"
+                                                                        {printf("additive_expression: additive_expression '+' multiplicative_expression\n");}
+#line 1983 "ansic.tab.c"
+    break;
+
+  case 36: /* additive_expression: additive_expression '-' multiplicative_expression  */
+#line 96 "ansic.y"
+                                                                        {printf("additive_expression: additive_expression '-' multiplicative_expression\n");}
+#line 1989 "ansic.tab.c"
+    break;
+
+  case 37: /* shift_expression: additive_expression  */
+#line 100 "ansic.y"
+                                                                                        {printf("shift_expression: additive_expression\n");}
+#line 1995 "ansic.tab.c"
+    break;
+
+  case 38: /* shift_expression: shift_expression LEFT_OP additive_expression  */
+#line 101 "ansic.y"
+                                                                {printf("shift_expression: shift_expression LEFT_OP additive_expression\n");}
+#line 2001 "ansic.tab.c"
+    break;
+
+  case 39: /* shift_expression: shift_expression RIGHT_OP additive_expression  */
+#line 102 "ansic.y"
+                                                                {printf("shift_expression: shift_expression RIGHT_OP additive_expression\n");}
+#line 2007 "ansic.tab.c"
+    break;
+
+  case 40: /* relational_expression: shift_expression  */
+#line 106 "ansic.y"
+                                                                                                {printf("relational_expression: shift_expression\n");}
+#line 2013 "ansic.tab.c"
+    break;
+
+  case 41: /* relational_expression: relational_expression '<' shift_expression  */
+#line 107 "ansic.y"
+                                                                {printf("relational_expression: relational_expression '<' shift_expression\n");}
+#line 2019 "ansic.tab.c"
+    break;
+
+  case 42: /* relational_expression: relational_expression '>' shift_expression  */
+#line 108 "ansic.y"
+                                                                {printf("relational_expression: relational_expression '>' shift_expression\n");}
+#line 2025 "ansic.tab.c"
+    break;
+
+  case 43: /* relational_expression: relational_expression LE_OP shift_expression  */
+#line 109 "ansic.y"
+                                                                {printf("relational_expression: relational_expression LE_OP shift_expression\n");}
+#line 2031 "ansic.tab.c"
+    break;
+
+  case 44: /* relational_expression: relational_expression GE_OP shift_expression  */
+#line 110 "ansic.y"
+                                                                {printf("relational_expression: relational_expression GE_OP shift_expression\n");}
+#line 2037 "ansic.tab.c"
+    break;
+
+  case 45: /* equality_expression: relational_expression  */
+#line 114 "ansic.y"
+                                                                                                {printf("equality_expression: relational_expression\n");}
+#line 2043 "ansic.tab.c"
+    break;
+
+  case 46: /* equality_expression: equality_expression EQ_OP relational_expression  */
+#line 115 "ansic.y"
+                                                                        {printf("equality_expression: equality_expression EQ_OP relational_expression\n");}
+#line 2049 "ansic.tab.c"
+    break;
+
+  case 47: /* equality_expression: equality_expression NE_OP relational_expression  */
+#line 116 "ansic.y"
+                                                                        {printf("equality_expression: equality_expression NE_OP relational_expression\n");}
+#line 2055 "ansic.tab.c"
+    break;
+
+  case 48: /* and_expression: equality_expression  */
+#line 120 "ansic.y"
+                                                                                {printf("and_expression: equality_expression\n");}
+#line 2061 "ansic.tab.c"
+    break;
+
+  case 49: /* and_expression: and_expression '&' equality_expression  */
+#line 121 "ansic.y"
+                                                                {printf("and_expression: and_expression '&' equality_expression\n");}
+#line 2067 "ansic.tab.c"
+    break;
+
+  case 50: /* exclusive_or_expression: and_expression  */
+#line 125 "ansic.y"
+                                                                                                {printf("exclusive_or_expression: and_expression\n");}
+#line 2073 "ansic.tab.c"
+    break;
+
+  case 51: /* exclusive_or_expression: exclusive_or_expression '^' and_expression  */
+#line 126 "ansic.y"
+                                                                {printf("exclusive_or_expression: exclusive_or_expression '^' and_expression\n");}
+#line 2079 "ansic.tab.c"
+    break;
+
+  case 52: /* inclusive_or_expression: exclusive_or_expression  */
+#line 130 "ansic.y"
+                                                                                                {printf("inclusive_or_expression: exclusive_or_expression\n");}
+#line 2085 "ansic.tab.c"
+    break;
+
+  case 53: /* inclusive_or_expression: inclusive_or_expression '|' exclusive_or_expression  */
+#line 131 "ansic.y"
+                                                                {printf("inclusive_or_expression: inclusive_or_expression '|' exclusive_or_expression\n");}
+#line 2091 "ansic.tab.c"
+    break;
+
+  case 54: /* logical_and_expression: inclusive_or_expression  */
+#line 135 "ansic.y"
+                                                                                                        {printf("logical_and_expression: inclusive_or_expression\n");}
+#line 2097 "ansic.tab.c"
+    break;
+
+  case 55: /* logical_and_expression: logical_and_expression AND_OP inclusive_or_expression  */
+#line 136 "ansic.y"
+                                                                        {printf("logical_and_expression: logical_and_expression AND_OP inclusive_or_expression\n");}
+#line 2103 "ansic.tab.c"
+    break;
+
+  case 56: /* logical_or_expression: logical_and_expression  */
+#line 140 "ansic.y"
+                                                                                                        {printf("logical_or_expression: logical_and_expression\n");}
+#line 2109 "ansic.tab.c"
+    break;
+
+  case 57: /* logical_or_expression: logical_or_expression OR_OP logical_and_expression  */
+#line 141 "ansic.y"
+                                                                        {printf("logical_or_expression: logical_or_expression OR_OP logical_and_expression\n");}
+#line 2115 "ansic.tab.c"
+    break;
+
+  case 58: /* conditional_expression: logical_or_expression  */
+#line 145 "ansic.y"
+                                                                                                                        {printf("conditional_expression: logical_or_expression\n");}
+#line 2121 "ansic.tab.c"
+    break;
+
+  case 59: /* conditional_expression: logical_or_expression '?' expression ':' conditional_expression  */
+#line 146 "ansic.y"
+                                                                                {printf("conditional_expression: logical_or_expression '?' expression ':' conditional_expression\n");}
+#line 2127 "ansic.tab.c"
+    break;
+
+  case 60: /* assignment_expression: conditional_expression  */
+#line 150 "ansic.y"
+                                                                                                                {printf("assignment_expression: conditional_expression\n");}
+#line 2133 "ansic.tab.c"
+    break;
+
+  case 61: /* assignment_expression: unary_expression assignment_operator assignment_expression  */
+#line 151 "ansic.y"
+                                                                        {printf("assignment_expression: unary_expression assignment_operator assignment_expression\n");}
+#line 2139 "ansic.tab.c"
+    break;
+
+  case 62: /* assignment_operator: '='  */
+#line 155 "ansic.y"
+                                        {printf("assignment_operator: '='\n");}
+#line 2145 "ansic.tab.c"
+    break;
+
+  case 63: /* assignment_operator: MUL_ASSIGN  */
+#line 156 "ansic.y"
+                                {printf("assignment_operator: MUL_ASSIGN\n");}
+#line 2151 "ansic.tab.c"
+    break;
+
+  case 64: /* assignment_operator: DIV_ASSIGN  */
+#line 157 "ansic.y"
+                                {printf("assignment_operator: DIV_ASSIGN\n");}
+#line 2157 "ansic.tab.c"
+    break;
+
+  case 65: /* assignment_operator: MOD_ASSIGN  */
+#line 158 "ansic.y"
+                                {printf("assignment_operator: MOD_ASSIGN\n");}
+#line 2163 "ansic.tab.c"
+    break;
+
+  case 66: /* assignment_operator: ADD_ASSIGN  */
+#line 159 "ansic.y"
+                                {printf("assignment_operator: ADD_ASSIGN\n");}
+#line 2169 "ansic.tab.c"
+    break;
+
+  case 67: /* assignment_operator: SUB_ASSIGN  */
+#line 160 "ansic.y"
+                                {printf("assignment_operator: SUB_ASSIGN\n");}
+#line 2175 "ansic.tab.c"
+    break;
+
+  case 68: /* assignment_operator: LEFT_ASSIGN  */
+#line 161 "ansic.y"
+                                {printf("assignment_operator: LEFT_ASSIGN\n");}
+#line 2181 "ansic.tab.c"
+    break;
+
+  case 69: /* assignment_operator: RIGHT_ASSIGN  */
+#line 162 "ansic.y"
+                                {printf("assignment_operator: RIGHT_ASSIGN\n");}
+#line 2187 "ansic.tab.c"
+    break;
+
+  case 70: /* assignment_operator: AND_ASSIGN  */
+#line 163 "ansic.y"
+                                {printf("assignment_operator: AND_ASSIGN\n");}
+#line 2193 "ansic.tab.c"
+    break;
+
+  case 71: /* assignment_operator: XOR_ASSIGN  */
+#line 164 "ansic.y"
+                                {printf("assignment_operator: XOR_ASSIGN\n");}
+#line 2199 "ansic.tab.c"
+    break;
+
+  case 72: /* assignment_operator: OR_ASSIGN  */
+#line 165 "ansic.y"
+                                        {printf("assignment_operator: OR_ASSIGN\n");}
+#line 2205 "ansic.tab.c"
+    break;
+
+  case 73: /* expression: assignment_expression  */
+#line 169 "ansic.y"
+                                                                        {printf("expression: assignment_expression\n");}
+#line 2211 "ansic.tab.c"
+    break;
+
+  case 74: /* expression: expression ',' assignment_expression  */
+#line 170 "ansic.y"
+                                                        {printf("expression: expression ',' assignment_expression\n");}
+#line 2217 "ansic.tab.c"
+    break;
+
+  case 75: /* constant_expression: conditional_expression  */
+#line 174 "ansic.y"
+                                                                        {printf("constant_expression: conditional_expression\n");}
+#line 2223 "ansic.tab.c"
+    break;
+
   case 76: /* declaration: declaration_specifiers ';'  */
 #line 178 "ansic.y"
                                                                                 {printf("declaration: declaration_specifiers ';'\n");}
-#line 1857 "ansic.tab.c"
+#line 2229 "ansic.tab.c"
     break;
 
   case 77: /* declaration: declaration_specifiers init_declarator_list ';'  */
 #line 179 "ansic.y"
                                                                 {printf("declaration: declaration_specifiers init_declarator_list ';'\n");}
-#line 1863 "ansic.tab.c"
+#line 2235 "ansic.tab.c"
+    break;
+
+  case 78: /* declaration_specifiers: storage_class_specifier  */
+#line 183 "ansic.y"
+                                                                                        {printf("declaration_specifiers: storage_class_specifier\n");}
+#line 2241 "ansic.tab.c"
+    break;
+
+  case 79: /* declaration_specifiers: storage_class_specifier declaration_specifiers  */
+#line 184 "ansic.y"
+                                                                {printf("declaration_specifiers: storage_class_specifier declaration_specifiers\n");}
+#line 2247 "ansic.tab.c"
+    break;
+
+  case 80: /* declaration_specifiers: type_specifier  */
+#line 185 "ansic.y"
+                                                                                                {printf("declaration_specifiers: type_specifier\n");}
+#line 2253 "ansic.tab.c"
+    break;
+
+  case 81: /* declaration_specifiers: type_specifier declaration_specifiers  */
+#line 186 "ansic.y"
+                                                                        {printf("declaration_specifiers: type_specifier declaration_specifiers\n");}
+#line 2259 "ansic.tab.c"
+    break;
+
+  case 82: /* declaration_specifiers: type_qualifier  */
+#line 187 "ansic.y"
+                                                                                                {printf("declaration_specifiers: type_qualifier\n");}
+#line 2265 "ansic.tab.c"
+    break;
+
+  case 83: /* declaration_specifiers: type_qualifier declaration_specifiers  */
+#line 188 "ansic.y"
+                                                                        {printf("declaration_specifiers: type_qualifier declaration_specifiers\n");}
+#line 2271 "ansic.tab.c"
+    break;
+
+  case 84: /* init_declarator_list: init_declarator  */
+#line 192 "ansic.y"
+                                                                                        {printf("init_declarator_list: init_declarator\n");}
+#line 2277 "ansic.tab.c"
+    break;
+
+  case 85: /* init_declarator_list: init_declarator_list ',' init_declarator  */
+#line 193 "ansic.y"
+                                                                {printf("init_declarator_list: init_declarator_list ',' init_declarator\n");}
+#line 2283 "ansic.tab.c"
+    break;
+
+  case 86: /* init_declarator: declarator  */
+#line 197 "ansic.y"
+                                                        {printf("init_declarator: declarator\n");}
+#line 2289 "ansic.tab.c"
+    break;
+
+  case 87: /* init_declarator: declarator '=' initializer  */
+#line 198 "ansic.y"
+                                        {printf("init_declarator: declarator '=' initializer\n");}
+#line 2295 "ansic.tab.c"
+    break;
+
+  case 88: /* storage_class_specifier: TYPEDEF  */
+#line 202 "ansic.y"
+                                                {printf("storage_class_specifier: TYPEDEF\n");}
+#line 2301 "ansic.tab.c"
+    break;
+
+  case 89: /* storage_class_specifier: EXTERN  */
+#line 203 "ansic.y"
+                                                {printf("storage_class_specifier: EXTERN\n");}
+#line 2307 "ansic.tab.c"
+    break;
+
+  case 90: /* storage_class_specifier: STATIC  */
+#line 204 "ansic.y"
+                                                {printf("storage_class_specifier: STATIC\n");}
+#line 2313 "ansic.tab.c"
+    break;
+
+  case 91: /* storage_class_specifier: AUTO  */
+#line 205 "ansic.y"
+                                                {printf("storage_class_specifier: AUTO\n");}
+#line 2319 "ansic.tab.c"
+    break;
+
+  case 92: /* storage_class_specifier: REGISTER  */
+#line 206 "ansic.y"
+                                                {printf("storage_class_specifier: REGISTER\n");}
+#line 2325 "ansic.tab.c"
+    break;
+
+  case 93: /* type_specifier: VOID  */
+#line 210 "ansic.y"
+                                                                {printf("type_specifier: VOID\n");}
+#line 2331 "ansic.tab.c"
+    break;
+
+  case 94: /* type_specifier: CHAR  */
+#line 211 "ansic.y"
+                                                                {printf("type_specifier: CHAR\n");}
+#line 2337 "ansic.tab.c"
+    break;
+
+  case 95: /* type_specifier: SHORT  */
+#line 212 "ansic.y"
+                                                                {printf("type_specifier: SHORT\n");}
+#line 2343 "ansic.tab.c"
+    break;
+
+  case 96: /* type_specifier: INT  */
+#line 213 "ansic.y"
+                                                                {printf("type_specifier: INT\n");}
+#line 2349 "ansic.tab.c"
+    break;
+
+  case 97: /* type_specifier: LONG  */
+#line 214 "ansic.y"
+                                                                {printf("type_specifier: LONG\n");}
+#line 2355 "ansic.tab.c"
+    break;
+
+  case 98: /* type_specifier: FLOAT  */
+#line 215 "ansic.y"
+                                                                {printf("type_specifier: FLOAT\n");}
+#line 2361 "ansic.tab.c"
+    break;
+
+  case 99: /* type_specifier: DOUBLE  */
+#line 216 "ansic.y"
+                                                                {printf("type_specifier: DOUBLE\n");}
+#line 2367 "ansic.tab.c"
+    break;
+
+  case 100: /* type_specifier: SIGNED  */
+#line 217 "ansic.y"
+                                                                {printf("type_specifier: SIGNED\n");}
+#line 2373 "ansic.tab.c"
+    break;
+
+  case 101: /* type_specifier: UNSIGNED  */
+#line 218 "ansic.y"
+                                                                {printf("type_specifier: UNSIGNED\n");}
+#line 2379 "ansic.tab.c"
+    break;
+
+  case 102: /* type_specifier: struct_or_union_specifier  */
+#line 219 "ansic.y"
+                                                {printf("type_specifier: struct_or_union_specifier\n");}
+#line 2385 "ansic.tab.c"
+    break;
+
+  case 103: /* type_specifier: enum_specifier  */
+#line 220 "ansic.y"
+                                                        {printf("type_specifier: enum_specifier\n");}
+#line 2391 "ansic.tab.c"
+    break;
+
+  case 104: /* type_specifier: TYPE_NAME  */
+#line 221 "ansic.y"
+                                                                {printf("type_specifier: TYPE_NAME\n");}
+#line 2397 "ansic.tab.c"
+    break;
+
+  case 105: /* struct_or_union_specifier: struct_or_union IDENTIFIER '{' struct_declaration_list '}'  */
+#line 225 "ansic.y"
+                                                                        {printf("struct_or_union_specifier: struct_or_union IDENTIFIER '{' struct_declaration_list '}'\n");}
+#line 2403 "ansic.tab.c"
+    break;
+
+  case 106: /* struct_or_union_specifier: struct_or_union '{' struct_declaration_list '}'  */
+#line 226 "ansic.y"
+                                                                                        {printf("struct_or_union_specifier: struct_or_union '{' struct_declaration_list '}'\n");}
+#line 2409 "ansic.tab.c"
+    break;
+
+  case 107: /* struct_or_union_specifier: struct_or_union IDENTIFIER  */
+#line 227 "ansic.y"
+                                                                                                        {printf("struct_or_union_specifier: struct_or_union IDENTIFIER\n");}
+#line 2415 "ansic.tab.c"
+    break;
+
+  case 108: /* struct_or_union: STRUCT  */
+#line 231 "ansic.y"
+                                {printf("struct_or_union: STRUCT\n");}
+#line 2421 "ansic.tab.c"
+    break;
+
+  case 109: /* struct_or_union: UNION  */
+#line 232 "ansic.y"
+                                {printf("struct_or_union: UNION\n");}
+#line 2427 "ansic.tab.c"
+    break;
+
+  case 110: /* struct_declaration_list: struct_declaration  */
+#line 236 "ansic.y"
+                                                                                {printf("struct_declaration_list: struct_declaration\n");}
+#line 2433 "ansic.tab.c"
+    break;
+
+  case 111: /* struct_declaration_list: struct_declaration_list struct_declaration  */
+#line 237 "ansic.y"
+                                                        {printf("struct_declaration_list: struct_declaration_list struct_declaration\n");}
+#line 2439 "ansic.tab.c"
+    break;
+
+  case 112: /* struct_declaration: specifier_qualifier_list struct_declarator_list ';'  */
+#line 241 "ansic.y"
+                                                                {printf("struct_declaration: specifier_qualifier_list struct_declarator_list ';'\n");}
+#line 2445 "ansic.tab.c"
+    break;
+
+  case 113: /* specifier_qualifier_list: type_specifier specifier_qualifier_list  */
+#line 245 "ansic.y"
+                                                                {printf("specifier_qualifier_list: type_specifier specifier_qualifier_list\n");}
+#line 2451 "ansic.tab.c"
+    break;
+
+  case 114: /* specifier_qualifier_list: type_specifier  */
+#line 246 "ansic.y"
+                                                                                        {printf("specifier_qualifier_list: type_specifier\n");}
+#line 2457 "ansic.tab.c"
+    break;
+
+  case 115: /* specifier_qualifier_list: type_qualifier specifier_qualifier_list  */
+#line 247 "ansic.y"
+                                                                {printf("specifier_qualifier_list: type_qualifier specifier_qualifier_list\n");}
+#line 2463 "ansic.tab.c"
+    break;
+
+  case 116: /* specifier_qualifier_list: type_qualifier  */
+#line 248 "ansic.y"
+                                                                                        {printf("specifier_qualifier_list: type_qualifier\n");}
+#line 2469 "ansic.tab.c"
+    break;
+
+  case 117: /* struct_declarator_list: struct_declarator  */
+#line 252 "ansic.y"
+                                                                                                {printf("struct_declarator_list: struct_declarator\n");}
+#line 2475 "ansic.tab.c"
+    break;
+
+  case 118: /* struct_declarator_list: struct_declarator_list ',' struct_declarator  */
+#line 253 "ansic.y"
+                                                                {printf("struct_declarator_list: struct_declarator_list ',' struct_declarator\n");}
+#line 2481 "ansic.tab.c"
+    break;
+
+  case 119: /* struct_declarator: declarator  */
+#line 257 "ansic.y"
+                                                                        {printf("struct_declarator: declarator\n");}
+#line 2487 "ansic.tab.c"
+    break;
+
+  case 120: /* struct_declarator: ':' constant_expression  */
+#line 258 "ansic.y"
+                                                                {printf("struct_declarator: ':' constant_expression\n");}
+#line 2493 "ansic.tab.c"
+    break;
+
+  case 121: /* struct_declarator: declarator ':' constant_expression  */
+#line 259 "ansic.y"
+                                                {printf("struct_declarator: declarator ':' constant_expression\n");}
+#line 2499 "ansic.tab.c"
+    break;
+
+  case 122: /* enum_specifier: ENUM '{' enumerator_list '}'  */
+#line 263 "ansic.y"
+                                                                        {printf("enum_specifier: ENUM '{' enumerator_list '}'\n");}
+#line 2505 "ansic.tab.c"
+    break;
+
+  case 123: /* enum_specifier: ENUM IDENTIFIER '{' enumerator_list '}'  */
+#line 264 "ansic.y"
+                                                                {printf("enum_specifier: ENUM IDENTIFIER '{' enumerator_list '}'\n");}
+#line 2511 "ansic.tab.c"
+    break;
+
+  case 124: /* enum_specifier: ENUM IDENTIFIER  */
+#line 265 "ansic.y"
+                                                                                        {printf("enum_specifier: ENUM IDENTIFIER\n");}
+#line 2517 "ansic.tab.c"
+    break;
+
+  case 125: /* enumerator_list: enumerator  */
+#line 269 "ansic.y"
+                                                                        {printf("enumerator_list: enumerator\n");}
+#line 2523 "ansic.tab.c"
+    break;
+
+  case 126: /* enumerator_list: enumerator_list ',' enumerator  */
+#line 270 "ansic.y"
+                                                        {printf("enumerator_list: enumerator_list ',' enumerator\n");}
+#line 2529 "ansic.tab.c"
+    break;
+
+  case 127: /* enumerator: IDENTIFIER  */
+#line 274 "ansic.y"
+                                                                        {printf("enumerator: IDENTIFIER\n");}
+#line 2535 "ansic.tab.c"
+    break;
+
+  case 128: /* enumerator: IDENTIFIER '=' constant_expression  */
+#line 275 "ansic.y"
+                                                {printf("enumerator: IDENTIFIER '=' constant_expression\n");}
+#line 2541 "ansic.tab.c"
+    break;
+
+  case 129: /* type_qualifier: CONST  */
+#line 279 "ansic.y"
+                                        {printf("type_qualifier: CONST\n");}
+#line 2547 "ansic.tab.c"
+    break;
+
+  case 130: /* type_qualifier: VOLATILE  */
+#line 280 "ansic.y"
+                                        {printf("type_qualifier: VOLATILE\n");}
+#line 2553 "ansic.tab.c"
+    break;
+
+  case 131: /* declarator: pointer direct_declarator  */
+#line 284 "ansic.y"
+                                        {printf("declarator: pointer direct_declarator\n");}
+#line 2559 "ansic.tab.c"
+    break;
+
+  case 132: /* declarator: direct_declarator  */
+#line 285 "ansic.y"
+                                                        {printf("declarator: direct_declarator\n");}
+#line 2565 "ansic.tab.c"
     break;
 
   case 133: /* direct_declarator: IDENTIFIER  */
 #line 289 "ansic.y"
                                                                                                 {printf("direct_declarator: IDENTIFIER\n");}
-#line 1869 "ansic.tab.c"
+#line 2571 "ansic.tab.c"
     break;
 
   case 134: /* direct_declarator: '(' declarator ')'  */
 #line 290 "ansic.y"
                                                                                         {printf("direct_declarator: '(' declarator ')'\n");}
-#line 1875 "ansic.tab.c"
+#line 2577 "ansic.tab.c"
     break;
 
   case 135: /* direct_declarator: direct_declarator '[' constant_expression ']'  */
 #line 291 "ansic.y"
                                                                 {printf("direct_declarator: direct_declarator '[' constant_expression ']'\n");}
-#line 1881 "ansic.tab.c"
+#line 2583 "ansic.tab.c"
     break;
 
   case 136: /* direct_declarator: direct_declarator '[' ']'  */
 #line 292 "ansic.y"
                                                                                         {printf("direct_declarator: direct_declarator '[' ']'\n");}
-#line 1887 "ansic.tab.c"
+#line 2589 "ansic.tab.c"
     break;
 
   case 137: /* direct_declarator: direct_declarator '(' parameter_type_list ')'  */
 #line 293 "ansic.y"
                                                                 {printf("direct_declarator: direct_declarator '(' parameter_type_list ')'\n");}
-#line 1893 "ansic.tab.c"
+#line 2595 "ansic.tab.c"
     break;
 
   case 138: /* direct_declarator: direct_declarator '(' identifier_list ')'  */
 #line 294 "ansic.y"
                                                                         {printf("direct_declarator: direct_declarator '(' identifier_list ')'\n");}
-#line 1899 "ansic.tab.c"
+#line 2601 "ansic.tab.c"
     break;
 
   case 139: /* direct_declarator: direct_declarator '(' ')'  */
 #line 295 "ansic.y"
                                                                                         {printf("direct_declarator: direct_declarator '(' ')'\n");}
-#line 1905 "ansic.tab.c"
+#line 2607 "ansic.tab.c"
+    break;
+
+  case 140: /* pointer: '*'  */
+#line 299 "ansic.y"
+                                                                                {printf("pointer: '*'\n");}
+#line 2613 "ansic.tab.c"
+    break;
+
+  case 141: /* pointer: '*' type_qualifier_list  */
+#line 300 "ansic.y"
+                                                                {printf("pointer: '*' type_qualifier_list\n");}
+#line 2619 "ansic.tab.c"
+    break;
+
+  case 142: /* pointer: '*' pointer  */
+#line 301 "ansic.y"
+                                                                        {printf("pointer: '*' pointer\n");}
+#line 2625 "ansic.tab.c"
+    break;
+
+  case 143: /* pointer: '*' type_qualifier_list pointer  */
+#line 302 "ansic.y"
+                                                        {printf("pointer: '*' type_qualifier_list pointer\n");}
+#line 2631 "ansic.tab.c"
+    break;
+
+  case 144: /* type_qualifier_list: type_qualifier  */
+#line 306 "ansic.y"
+                                                                        {printf("type_qualifier_list: type_qualifier\n");}
+#line 2637 "ansic.tab.c"
+    break;
+
+  case 145: /* type_qualifier_list: type_qualifier_list type_qualifier  */
+#line 307 "ansic.y"
+                                                {printf("type_qualifier_list: type_qualifier_list type_qualifier\n");}
+#line 2643 "ansic.tab.c"
+    break;
+
+  case 146: /* parameter_type_list: parameter_list  */
+#line 312 "ansic.y"
+                                                                {printf("parameter_type_list: parameter_list\n");}
+#line 2649 "ansic.tab.c"
+    break;
+
+  case 147: /* parameter_type_list: parameter_list ',' ELLIPSIS  */
+#line 313 "ansic.y"
+                                                {printf("parameter_type_list: parameter_list ',' ELLIPSIS\n");}
+#line 2655 "ansic.tab.c"
+    break;
+
+  case 148: /* parameter_list: parameter_declaration  */
+#line 317 "ansic.y"
+                                                                                {printf("parameter_list: parameter_declaration	\n");}
+#line 2661 "ansic.tab.c"
+    break;
+
+  case 149: /* parameter_list: parameter_list ',' parameter_declaration  */
+#line 318 "ansic.y"
+                                                                {printf("parameter_list: parameter_list ',' parameter_declaration\n");}
+#line 2667 "ansic.tab.c"
+    break;
+
+  case 150: /* parameter_declaration: declaration_specifiers declarator  */
+#line 322 "ansic.y"
+                                                                        {printf("parameter_declaration: declaration_specifiers declarator	\n");}
+#line 2673 "ansic.tab.c"
+    break;
+
+  case 151: /* parameter_declaration: declaration_specifiers abstract_declarator  */
+#line 323 "ansic.y"
+                                                        {printf("parameter_declaration: declaration_specifiers abstract_declarator\n");}
+#line 2679 "ansic.tab.c"
+    break;
+
+  case 152: /* parameter_declaration: declaration_specifiers  */
+#line 324 "ansic.y"
+                                                                                {printf("parameter_declaration: declaration_specifiers\n");}
+#line 2685 "ansic.tab.c"
+    break;
+
+  case 153: /* identifier_list: IDENTIFIER  */
+#line 328 "ansic.y"
+                                                                {printf("identifier_list: IDENTIFIER\n");}
+#line 2691 "ansic.tab.c"
+    break;
+
+  case 154: /* identifier_list: identifier_list ',' IDENTIFIER  */
+#line 329 "ansic.y"
+                                                {printf("identifier_list: identifier_list ',' IDENTIFIER\n");}
+#line 2697 "ansic.tab.c"
+    break;
+
+  case 155: /* type_name: specifier_qualifier_list  */
+#line 333 "ansic.y"
+                                                                                        {printf("type_name: specifier_qualifier_list\n");}
+#line 2703 "ansic.tab.c"
+    break;
+
+  case 156: /* type_name: specifier_qualifier_list abstract_declarator  */
+#line 334 "ansic.y"
+                                                                {printf("type_name: specifier_qualifier_list abstract_declarator\n");}
+#line 2709 "ansic.tab.c"
+    break;
+
+  case 157: /* abstract_declarator: pointer  */
+#line 338 "ansic.y"
+                                                                                        {printf("abstract_declarator: pointer\n");}
+#line 2715 "ansic.tab.c"
+    break;
+
+  case 158: /* abstract_declarator: direct_abstract_declarator  */
+#line 339 "ansic.y"
+                                                                {printf("abstract_declarator: direct_abstract_declarator\n");}
+#line 2721 "ansic.tab.c"
+    break;
+
+  case 159: /* abstract_declarator: pointer direct_abstract_declarator  */
+#line 340 "ansic.y"
+                                                        {printf("abstract_declarator: pointer direct_abstract_declarator\n");}
+#line 2727 "ansic.tab.c"
+    break;
+
+  case 160: /* direct_abstract_declarator: '(' abstract_declarator ')'  */
+#line 344 "ansic.y"
+                                                                                                {printf("direct_abstract_declarator: '(' abstract_declarator ')'\n");}
+#line 2733 "ansic.tab.c"
+    break;
+
+  case 161: /* direct_abstract_declarator: '[' ']'  */
+#line 345 "ansic.y"
+                                                                                                                        {printf("direct_abstract_declarator: '[' ']'\n");}
+#line 2739 "ansic.tab.c"
+    break;
+
+  case 162: /* direct_abstract_declarator: '[' constant_expression ']'  */
+#line 346 "ansic.y"
+                                                                                                {printf("direct_abstract_declarator: '[' constant_expression ']'\n");}
+#line 2745 "ansic.tab.c"
+    break;
+
+  case 163: /* direct_abstract_declarator: direct_abstract_declarator '[' ']'  */
+#line 347 "ansic.y"
+                                                                                        {printf("direct_abstract_declarator: direct_abstract_declarator '[' ']'\n");}
+#line 2751 "ansic.tab.c"
+    break;
+
+  case 164: /* direct_abstract_declarator: direct_abstract_declarator '[' constant_expression ']'  */
+#line 348 "ansic.y"
+                                                                        {printf("direct_abstract_declarator: direct_abstract_declarator '[' constant_expression ']'\n");}
+#line 2757 "ansic.tab.c"
+    break;
+
+  case 165: /* direct_abstract_declarator: '(' ')'  */
+#line 349 "ansic.y"
+                                                                                                                        {printf("direct_abstract_declarator: '(' ')'\n");}
+#line 2763 "ansic.tab.c"
+    break;
+
+  case 166: /* direct_abstract_declarator: '(' parameter_type_list ')'  */
+#line 350 "ansic.y"
+                                                                                                {printf("direct_abstract_declarator: '(' parameter_type_list ')'\n");}
+#line 2769 "ansic.tab.c"
+    break;
+
+  case 167: /* direct_abstract_declarator: direct_abstract_declarator '(' ')'  */
+#line 351 "ansic.y"
+                                                                                        {printf("direct_abstract_declarator: direct_abstract_declarator '(' ')'\n");}
+#line 2775 "ansic.tab.c"
+    break;
+
+  case 168: /* direct_abstract_declarator: direct_abstract_declarator '(' parameter_type_list ')'  */
+#line 352 "ansic.y"
+                                                                        {printf("direct_abstract_declarator: direct_abstract_declarator '(' parameter_type_list ')'\n");}
+#line 2781 "ansic.tab.c"
+    break;
+
+  case 169: /* initializer: assignment_expression  */
+#line 356 "ansic.y"
+                                                                {printf("initializer: assignment_expression\n");}
+#line 2787 "ansic.tab.c"
+    break;
+
+  case 170: /* initializer: '{' initializer_list '}'  */
+#line 357 "ansic.y"
+                                                                {printf("initializer: '{' initializer_list '}'\n");}
+#line 2793 "ansic.tab.c"
+    break;
+
+  case 171: /* initializer: '{' initializer_list ',' '}'  */
+#line 358 "ansic.y"
+                                                        {printf("initializer: '{' initializer_list ',' '}'\n");}
+#line 2799 "ansic.tab.c"
+    break;
+
+  case 172: /* initializer_list: initializer  */
+#line 362 "ansic.y"
+                                                                        {printf("initializer_list: initializer\n");}
+#line 2805 "ansic.tab.c"
+    break;
+
+  case 173: /* initializer_list: initializer_list ',' initializer  */
+#line 363 "ansic.y"
+                                                        {printf("initializer_list: initializer_list ',' initializer\n");}
+#line 2811 "ansic.tab.c"
+    break;
+
+  case 174: /* statement: labeled_statement  */
+#line 367 "ansic.y"
+                                                {printf("statement: labeled_statement\n");}
+#line 2817 "ansic.tab.c"
+    break;
+
+  case 175: /* statement: compound_statement  */
+#line 368 "ansic.y"
+                                        {printf("statement: compound_statement\n");}
+#line 2823 "ansic.tab.c"
+    break;
+
+  case 176: /* statement: expression_statement  */
+#line 369 "ansic.y"
+                                        {printf("statement: expression_statement\n");}
+#line 2829 "ansic.tab.c"
+    break;
+
+  case 177: /* statement: selection_statement  */
+#line 370 "ansic.y"
+                                        {printf("statement: selection_statement\n");}
+#line 2835 "ansic.tab.c"
+    break;
+
+  case 178: /* statement: iteration_statement  */
+#line 371 "ansic.y"
+                                        {printf("statement: iteration_statement\n");}
+#line 2841 "ansic.tab.c"
+    break;
+
+  case 179: /* statement: jump_statement  */
+#line 372 "ansic.y"
+                                                {printf("statement: jump_statement\n");}
+#line 2847 "ansic.tab.c"
+    break;
+
+  case 180: /* labeled_statement: IDENTIFIER ':' statement  */
+#line 376 "ansic.y"
+                                                                        {printf("labeled_statement: IDENTIFIER ':' statement\n");}
+#line 2853 "ansic.tab.c"
+    break;
+
+  case 181: /* labeled_statement: CASE constant_expression ':' statement  */
+#line 377 "ansic.y"
+                                                        {printf("labeled_statement: CASE constant_expression ':' statement\n");}
+#line 2859 "ansic.tab.c"
+    break;
+
+  case 182: /* labeled_statement: DEFAULT ':' statement  */
+#line 378 "ansic.y"
+                                                                        {printf("labeled_statement: DEFAULT ':' statement\n");}
+#line 2865 "ansic.tab.c"
+    break;
+
+  case 183: /* compound_statement: '{' '}'  */
+#line 382 "ansic.y"
+                                                                                        {printf("compound_statement: '{' '}'\n");}
+#line 2871 "ansic.tab.c"
+    break;
+
+  case 184: /* compound_statement: '{' statement_list '}'  */
+#line 383 "ansic.y"
+                                                                        {printf("compound_statement: '{' statement_list '}'\n");}
+#line 2877 "ansic.tab.c"
+    break;
+
+  case 185: /* compound_statement: '{' declaration_list '}'  */
+#line 384 "ansic.y"
+                                                                        {printf("compound_statement: '{' declaration_list '}'\n");}
+#line 2883 "ansic.tab.c"
+    break;
+
+  case 186: /* compound_statement: '{' declaration_list statement_list '}'  */
+#line 385 "ansic.y"
+                                                        {printf("compound_statement: '{' declaration_list statement_list '}'\n");}
+#line 2889 "ansic.tab.c"
+    break;
+
+  case 187: /* declaration_list: declaration  */
+#line 389 "ansic.y"
+                                                                {printf("declaration_list: declaration\n");}
+#line 2895 "ansic.tab.c"
+    break;
+
+  case 188: /* declaration_list: declaration_list declaration  */
+#line 390 "ansic.y"
+                                                {printf("declaration_list: declaration_list declaration\n");}
+#line 2901 "ansic.tab.c"
+    break;
+
+  case 189: /* statement_list: statement  */
+#line 394 "ansic.y"
+                                                                {printf("statement_list: statement\n");}
+#line 2907 "ansic.tab.c"
+    break;
+
+  case 190: /* statement_list: statement_list statement  */
+#line 395 "ansic.y"
+                                                {printf("statement_list: statement_list statement\n");}
+#line 2913 "ansic.tab.c"
+    break;
+
+  case 191: /* expression_statement: ';'  */
+#line 399 "ansic.y"
+                                                {printf("expression_statement: ';'\n");}
+#line 2919 "ansic.tab.c"
+    break;
+
+  case 192: /* expression_statement: expression ';'  */
+#line 400 "ansic.y"
+                                        {printf("expression_statement: expression ';'\n");}
+#line 2925 "ansic.tab.c"
     break;
 
   case 193: /* selection_statement: IF '(' expression ')' statement  */
 #line 405 "ansic.y"
                                                                 {printf("selection_statement: IF '(' expression ')' statement\n");}
-#line 1911 "ansic.tab.c"
+#line 2931 "ansic.tab.c"
     break;
 
   case 194: /* selection_statement: IF '(' expression ')' statement ELSE statement  */
 #line 406 "ansic.y"
                                                                 {printf("selection_statement: IF '(' expression ')' statement ELSE statement\n");}
-#line 1917 "ansic.tab.c"
+#line 2937 "ansic.tab.c"
     break;
 
   case 195: /* selection_statement: SWITCH '(' expression ')' statement  */
 #line 407 "ansic.y"
                                                                         {printf("selection_statement: SWITCH '(' expression ')' statement\n");}
-#line 1923 "ansic.tab.c"
+#line 2943 "ansic.tab.c"
     break;
 
   case 196: /* iteration_statement: WHILE '(' expression ')' statement  */
 #line 411 "ansic.y"
                                                                                                                                 {printf("iteration_statement: WHILE '(' expression ')' statement\n");}
-#line 1929 "ansic.tab.c"
+#line 2949 "ansic.tab.c"
     break;
 
   case 197: /* iteration_statement: DO statement WHILE '(' expression ')' ';'  */
 #line 412 "ansic.y"
                                                                                                                                 {printf("iteration_statement: DO statement WHILE '(' expression ')' ';'\n");}
-#line 1935 "ansic.tab.c"
+#line 2955 "ansic.tab.c"
     break;
 
   case 198: /* iteration_statement: FOR '(' expression_statement expression_statement ')' statement  */
 #line 413 "ansic.y"
                                                                                                         {printf("iteration_statement: FOR '(' expression_statement expression_statement ')' statement\n");}
-#line 1941 "ansic.tab.c"
+#line 2961 "ansic.tab.c"
     break;
 
   case 199: /* iteration_statement: FOR '(' expression_statement expression_statement expression ')' statement  */
 #line 414 "ansic.y"
                                                                                         {printf("iteration_statement: FOR '(' expression_statement expression_statement expression ')' statement\n");}
-#line 1947 "ansic.tab.c"
+#line 2967 "ansic.tab.c"
     break;
 
   case 200: /* jump_statement: GOTO IDENTIFIER ';'  */
 #line 418 "ansic.y"
                                         {printf("jump_statement: GOTO IDENTIFIER ';'\n");}
-#line 1953 "ansic.tab.c"
+#line 2973 "ansic.tab.c"
     break;
 
   case 201: /* jump_statement: CONTINUE ';'  */
 #line 419 "ansic.y"
                                                 {printf("jump_statement: CONTINUE ';'\n");}
-#line 1959 "ansic.tab.c"
+#line 2979 "ansic.tab.c"
     break;
 
   case 202: /* jump_statement: BREAK ';'  */
 #line 420 "ansic.y"
                                                         {printf("jump_statement: BREAK ';'\n");}
-#line 1965 "ansic.tab.c"
+#line 2985 "ansic.tab.c"
     break;
 
   case 203: /* jump_statement: RETURN ';'  */
 #line 421 "ansic.y"
                                                 {printf("jump_statement: RETURN ';'\n");}
-#line 1971 "ansic.tab.c"
+#line 2991 "ansic.tab.c"
     break;
 
   case 204: /* jump_statement: RETURN expression ';'  */
 #line 422 "ansic.y"
                                         {printf("jump_statement: RETURN expression ';'\n");}
-#line 1977 "ansic.tab.c"
+#line 2997 "ansic.tab.c"
     break;
 
   case 205: /* translation_unit: external_declaration  */
 #line 426 "ansic.y"
                                                                         {printf("translation_unit: external_declaration\n");}
-#line 1983 "ansic.tab.c"
+#line 3003 "ansic.tab.c"
     break;
 
   case 206: /* translation_unit: translation_unit external_declaration  */
 #line 427 "ansic.y"
                                                         {printf("translation_unit: translation_unit external_declaration\n");}
-#line 1989 "ansic.tab.c"
+#line 3009 "ansic.tab.c"
     break;
 
   case 207: /* external_declaration: function_definition  */
 #line 431 "ansic.y"
                                    {printf("external_declaration: function_definition\n");}
-#line 1995 "ansic.tab.c"
+#line 3015 "ansic.tab.c"
     break;
 
   case 208: /* external_declaration: declaration  */
 #line 432 "ansic.y"
                                            {printf("external_declaration: declaration\n");}
-#line 2001 "ansic.tab.c"
+#line 3021 "ansic.tab.c"
     break;
 
   case 209: /* function_definition: declaration_specifiers declarator declaration_list compound_statement  */
 #line 436 "ansic.y"
                                                                                     {printf("function_definition: declaration_specifiers declarator declaration_list compound_statement\n");}
-#line 2007 "ansic.tab.c"
+#line 3027 "ansic.tab.c"
     break;
 
   case 210: /* function_definition: declaration_specifiers declarator compound_statement  */
 #line 437 "ansic.y"
                                                                                                         {printf("function_definition: declaration_specifiers declarator compound_statement\n");}
-#line 2013 "ansic.tab.c"
+#line 3033 "ansic.tab.c"
     break;
 
   case 211: /* function_definition: declarator declaration_list compound_statement  */
 #line 438 "ansic.y"
                                                                                                                 {printf("function_definition: declarator declaration_list compound_statement\n");}
-#line 2019 "ansic.tab.c"
+#line 3039 "ansic.tab.c"
     break;
 
   case 212: /* function_definition: declarator compound_statement  */
 #line 439 "ansic.y"
                                                                                                                                 {printf("function_definition: declarator compound_statement\n");}
-#line 2025 "ansic.tab.c"
+#line 3045 "ansic.tab.c"
     break;
 
 
-#line 2029 "ansic.tab.c"
+#line 3049 "ansic.tab.c"
 
       default: break;
     }
